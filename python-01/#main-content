@@ -1,0 +1,478 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+<title>mta.info | Developer Resources</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link rel="shortcut icon" href="/siteimages/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/base.css">
+<link rel="stylesheet" type="text/css" href="/css/grid.css">
+<link rel="stylesheet" type="text/css" href="/css/topbar.css">
+<link rel="stylesheet" type="text/css" href="/css/formalize.css">
+<!-- <link rel="stylesheet" type="text/css" href="/css/jquery.datepick.css"> -->
+
+<!-- jQuery include should be at the top -->
+<script language="javascript" type="text/javascript" src="/js/jquery-1.4.4.min.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139746469-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-139746469-1');
+</script>
+
+<link rel="stylesheet" type="text/css" href="/css/template.css">
+
+<link rel="stylesheet" type="text/css" href="dev.css" />
+<style type="text/css">
+#featured-app .plain_box_top { float: left; margin-top:0; padding-left:8px; padding-top:0; background: url('/developers/images/featured_top.jpg') top left no-repeat; width: 100%; height: 27px;}
+#contentbox #featured-app .plain_box_top h3 { margin-top:4px; }
+
+#featured-app .plain_box_middle { float: left; padding:0 10px 10px 10px; width:185px; height:460px; border-left: 3px solid #dedee6; border-right: 3px solid #dedee6; color:#000099; background-color: transparent; overflow: hidden;}
+#contentbox #featured-app .plain_box_middle h2, #contentbox #featured-app .plain_box_middle h2 {margin-top:0.5em; margin-bottom:0; padding-bottom:0;} 
+#contentbox #featured-app .plain_box_middle h2 a:link, #contentbox #featured-app .plain_box_middle h2 a:visited {margin-bottom:0; padding-bottom:0; color:#000099;}
+#contentbox #featured-app .plain_box_middle img { border:0; }
+#featured-app .plain_box_bottom { float: left; margin-top:0; margin-left:3px; background-image: url('/developers/images/featured_bottom.jpg'); width: 100%; height: 3px; }
+#contentbox .more-apps { margin-top: -5px; float:left; width:211px; height:122px; border-top: 1px solid #dedee6; border-bottom: 1px solid #dedee6; border-right: 1px solid #dedee6;}
+#contentbox .more-apps dl.app-thumbnail { margin:0; padding:0; width:69px; height:122px; border-left: 1px solid #dedee6; float:left; }
+#contentbox .more-apps dl.app-thumbnail dd { margin: 0 auto; padding: 0; font-weight: bold; text-align:center;}
+#contentbox .more-apps dl.app-thumbnail dt { margin: 0 auto; padding: 6px 0; width: 69px; text-align:center; font-size: 11px; font-weight:bold; }
+#contentbox .more-apps dl.app-thumbnail dt a:link, #contentbox .more-apps dl.app-thumbnail dt a:visited { color:#333;}
+
+.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+</style>
+		<!--[if lt IE 9]>
+			<style>.roundCorners {border: 1px solid #b4b4b4;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;background: #fff;behavior: url(/css/border-radius.htc);}</style>
+		<![endif]-->
+	
+<!--[if IE 6]>
+<style>
+#topbar { margin: 0; padding:0;	height: 122px; width: 961px;}
+#horizontalcssmenu ul#cssmenu1 li{ position: relative; display: inline;	float: left; border: none; }
+</style>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/css/print.css" media="print">
+</head>
+
+<body>
+		<div id="skip-navigation">
+    <a href="#main-content">Skip to main content</a>
+  </div>
+<div id="mainbox">
+
+		
+	<div id="topbar">
+
+
+
+		<div id="branding">
+
+		<a href="http://www.mta.info"><img src="/template/images/mta_info.gif" alt="Go to MTA homepage"></a>
+
+		</div>
+
+
+
+		<div id="search">
+
+			<ul id="topbar-links">
+
+				<li class="list_h" style="margin-left:4px;"><a href="https://new.mta.info/accessibility">Accessibility</a></li>
+
+				<li class="list_h" style="margin-left:4px;"><a href="http://assistive.usablenet.com/tt/http://www.mta.info">Text-only</a></li>
+
+				<li class="list_h" style="margin-left:4px;"><a href="https://new.mta.info/customer-self-service">Customer Self-Service</a></li>
+
+				<li class="list_h" style="margin-left:4px;"><a href="https://new.mta.info/careers">Employment</a></li>
+
+				<li class="list_h" style="margin-left:4px;"><a href="https://new.mta.info/customer-feedback">FAQs/Contact Us</a></li>
+
+			</ul><br />
+
+
+<div id="search-box" style="width:230px; height:32px; float:right; margin-top:4px; margin-right:0; padding-right:0;">
+	
+	
+	
+	
+<style>
+	
+	#search-box{
+		width: 330px !important;
+	}
+	
+	.gsc-input-box{
+		margin-top: -8px!important;
+		width: 260px;	
+	}
+	
+	.gsc-search-box-tools .gsc-search-box .gsc-input{
+			background: none !important;	
+	}
+	
+	.gsc-input-box{
+		border: none !important;
+	}
+
+	input#gsc-i-id1{
+		border: 1px solid #c7c6c6 !important;
+		height: 36px !important;
+	}
+	
+	input#gsc-i-id1::-webkit-input-placeholder {
+	   color:transparent !important;
+	}
+
+	input#gsc-i-id1:-moz-placeholder { /* Firefox 18- */
+	   color:transparent !important; 
+	}
+
+	input#gsc-i-id1::-moz-placeholder {  /* Firefox 19+ */
+	   color:transparent !important; 
+	}
+	input#gsc-i-id1:-ms-input-placeholder {  
+	   color:transparent !important;
+	}
+
+	.gsc-search-button .gsc-search-button-v2{
+		padding: 11px 15px !important;
+		margin-top: -15px !important;
+/*		margin-left: -85px;*/
+		background-color: #0055b2!important;
+	}
+
+
+</style>     
+
+       
+       
+       
+        <div>
+<script>
+  (function() {
+    var cx = '000380356514842586090:hcqj_toqrsa';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only>
+        </div>
+        
+        
+
+	
+	
+
+			<!-- <form id="searchform" method="get" action="https://cse.google.com/cse?cx=001850405712132341878:zpzujznek7w" style="margin:0; padding:0; height:32px; float:left;">
+
+				<input type="hidden" name="site" value="my_collection"/>
+
+				<input type="hidden" name="client" value="my_collection"/>
+
+				<input type="hidden" name="proxystylesheet" value="my_collection"/>
+
+				<input type="hidden" name="output" value="xml_no_dtd"/>
+
+<!--				<label for="searchinputbox" style="margin-left:-999px; margin-top:0; font-size:10px;">Enter search term:</label>-->
+
+				<!-- <input type="text" name="q" id="searchinputbox" alt="searchinputbox" size="20" maxlength="255" value="" style="margin-right:6px;float:left;" aria-label="textbox for Search"/><input type="submit" name="btnG" value="search" id="searchbutton" style="padding:1px 8px; float:right; margin-left:0;margin-top:-1px;">
+
+			</form> -->
+
+			</div>
+			</div>
+
+<!-- <div class="special-banner-content" style="clear: both; text-align:center; margin-top:-1em;">
+	<p style="padding:0 3em 0 3em; font-size:125%; text-align:center;"><span class="blink" style="font-weight: bold; color: red;"><a href="http://nymta.civicconnect.com/LIRR-PennStation" style="color:red; ">The LIRR will resume regular weekday service on 9/5, following Amtrak&rsquo;s return to regularly scheduled operations at Penn Station. New timetables in effect 9/5. Special discounted fares through 8/31.<br />
+	Temporary bus &amp; ferry service through 9/1.</a></span></p>
+</div> -->
+
+		<div id="horizontalcssmenu" style="clear: both;">
+
+			<ul id="cssmenu1">
+
+					<li style="width: 75px; border-left: none;"><a href="http://www.mta.info" style="padding-left:18px;">Home</a>
+
+						<ul>
+
+						<li><a href="http://www.mta.info">MTA Home</a></li>
+
+						<li><a href="http://www.mta.info/nyct">NYC Subways and Buses</a></li>
+
+						<li><a href="http://www.mta.info/lirr">Long Island Rail Road</a></li>
+
+						<li><a href="http://www.mta.info/mnr">Metro-North Railroad</a></li>
+
+						<li><a href="http://www.mta.info/bandt">Bridges and Tunnels</a></li>
+
+						<li><a href="https://new.mta.info/capital">MTA Capital Program</a></li>
+
+					</ul>
+
+				</li>
+
+				<li style="width: 99px;"><a href="https://new.mta.info/schedules">Schedules</a></li>
+
+				<li style="width: 117px;"><a href="https://new.mta.info/fares-and-tolls">Fares &amp; Tolls</a></li>
+
+				<li style="width: 65px;"><a href="https://new.mta.info/maps">Maps</a></li>
+
+				<li style="width: 199px;"><a href="https://new.mta.info/planned-service-changes">Planned Service Changes</a></li>
+
+				<li style="width: 96px;"><a href="http://web.mta.info/about">MTA Info</a></li>
+
+				<li style="width: 183px;"><a href="https://new.mta.info/doing-business-with-us">Doing Business With Us</a></li>
+
+				<li style="width: 119px;"><a href="https://new.mta.info/transparency" style="padding-right:23px;">Transparency</a>
+
+					<ul>
+
+						<li><a href="https://new.mta.info/transparency">Main Page</a></li>
+
+						<li><a href="https://new.mta.info/transparency/board-and-committee-meetings/2019/meeting-materials">Board Materials</a></li>
+
+						<li><a href="https://new.mta.info/budget">Budget Info</a></li>
+
+						<li><a href="https://new.mta.info/capital">Capital Program Info</a></li>
+
+						<li><a href="http://web.mta.info/capitaldashboard/CPDHome.html">Capital Program Dashboard</a></li>
+
+						<li><a href="http://web.mta.info/mta/investor/">Investor Information</a></li>
+
+						<li><a href="https://new.mta.info/transparency/leadership">MTA Leadership</a></li>
+
+						<li><a href="http://web.mta.info/persdashboard/performance14.html">Performance Indicators</a></li>
+
+						<li><a href="http://www.mta.info/mta-news">Press Releases and News</a></li>
+
+						<li><a href="https://new.mta.info/transparency/public-hearings">Public Hearings</a></li>
+
+
+					</ul>
+
+				</li>
+
+			</ul>
+
+		</div>
+
+</div> <!-- close topbar -->
+
+
+
+
+
+		<div id="breadcrumbs"><a href="http://www.mta.info/" title="Home Page">Home</a> &gt; <a href="http://web.mta.info/developers/">Developers</a> &gt; <strong>Developer Resources</strong></div>
+
+	
+		<div id="contentbox" style="margin:20px 0 10px 0; padding:0;">
+		<!-- skip navigation anchor -->
+	<a name="main-content">&nbsp;</a>
+
+		<!-- Enter Content here -->
+<div class="roundCorners push-1 span-72 pad-10">
+	
+	<h1>Developer Resources</h1>
+	<br />
+<ul style="margin-left: 0;">
+		<li class="list_h" style="margin-right: 20px;"><strong>Developer Resources</strong></li>
+	<li class="list_h" style="margin-right: 20px;"><a href="download.html">Data Downloads</a></li>
+		<li class="list_h" style="margin-right: 20px;"><a href="http://groups.google.com/group/mtadeveloperresources">MTA Google Group</a></li>
+		<!--li class="list_h"><a href="http://2014mtaappquest.challengepost.com/">App Quest 3.0</a></li-->
+  </ul>
+	
+	<div class="span-47 pad-10">
+	
+      <br />
+     <h3 style="margin-top:0;">Does it cost to use our data?</h3>
+	  <p>Our data feeds are FREE for use.</p>
+		<p>App developers must agree to the terms and conditions of this access and <a href="http://datamine.mta.info/user/register">complete and submit an Online Registration Form</a>. Once that form is reviewed and accepted, the developer will be issued a Developer's API key. The key will enable the developer to access the MTA's data feeds.  <a href="developer-data-terms.html">Click here to review the full terms and conditions of MTA data usage</a>. In order to access data downloads, you must agree to these terms and conditions.</p>
+		<h3>Want to use our logos, maps, or symbols?</h3>
+		<p>Use of our intellectual property requires a license. We've put together a simple, easy-to-understand developer package for licensing our identity for use in your project. <a href="license.html">Click here to request a license</a>.</p>
+		<h3>Why aren't our logos and symbols free for use?</h3>
+		<p>The MTA protects its brand identity and intellectual property on behalf of the public. Revenues generated from licensing go back into our budget, helping provide services for our customers. If an MTA-approved mobile application is provided to the public free of charge, the MTA requires a license but will not charge a license fee for the use of our intellectual property.</p>
+	</div>
+<div class="span-21" style="margin-top: 15px;">
+		<div id="featured-app">
+			<div class="plain_box_top">
+				<h3>Featured Apps</h3>
+			</div>
+
+			<!--
+			<div class="plain_box_middle">
+				<h2>The Weekender</h2>
+				<p>For iPhone and Android this free-to-download app shares the same features as the desktop version, including a subway diagram that displays service availability and reroutes each weekend.</p>
+				<ul class="arrow" style="margin-top:0; font-size:12px;">
+					<li><a href="/apps/weekenderApp.html">Learn more</a></li>
+					<li><a href="http://itunes.apple.com/us/app/weekender/id528916102?ls=1&mt=8">Go to the iPhone App Store</a></li>
+					<li><a href="https://play.google.com/store/apps/details?id=com.fortsolution.weekender.activities&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5mb3J0c29sdXRpb24ud2Vla2VuZGVyLmFjdGl2aXRpZXMiXQ">Go to the Google Playstore</a></li>
+				</ul>
+				<p><a href="http://itunes.apple.com/us/app/weekender/id528916102?ls=1&mt=8"><img src="/apps/images/mta_weekender_s.jpg"/></a></p>				
+			</div>-->
+			
+			<div class="plain_box_middle">
+				<h2 style="margin-bottom:0;">MTA eTix<sup>&reg;</sup></h2>
+					<p style="text-align:center; margin-bottom:0;"><img src="images/eTix-screen.jpg" alt="MTA eTix&trade; screenshot" /></p>	
+				<p>The MTA's new mobile ticketing app that lets you purchase and use Long Island Rail Road and Metro-North Railroad tickets directly on your mobile device.</p>
+				<a href="http://www.mta.info/eTix">Learn  more</a>&hellip;				
+				<!-- h2 style="margin-bottom:0;">MTA Bus Time</h2>
+					<p><img src="images/bustime.jpg" alt="MTA Bus Time screenshots" /></p>	
+	<h3>The latest enhancement to MTA Bus Time<sup>&reg;</sup></h3>
+				<p>Tracks real-time location of buses using Global  Positioning System (GPS) hardware and wireless communications technology.</p>
+				<a href="http://web.mta.info/nyct/service/BusTimeAppJune2015.htm">Learn  more&hellip;</a -->
+				<p style="margin-bottom:0;">&nbsp;</p>
+
+	<ul class="arrow" style="margin-top:0; font-size:12px;">
+		<li><a href="http://web.mta.info/lirr/traintimeapp/">MTA LIRR Train Time&reg;</a></li>
+		<li><a href="http://web.mta.info/mnr/html/traintimeapp.htm">MTA Metro-North Train Time&reg;</a></li>
+	</ul>
+
+			<!-- h2 style="margin-bottom:0.5em;">MTA Subway Time<sup>&reg;</sup></h2>
+				<p>Capturing the data from the widely popular subway countdown clocks, MTA has released its own beta app for the iPhone to provide real-time train arrival information.</p>
+				<ul class="arrow" style="margin-top:0; font-size:12px;">
+					<li><a href="/apps/subwaytimeapp.html">Learn more</a></li>
+					<li><a href="https://itunes.apple.com/us/app/mta-subway-time/id561507659?ls=1&mt=8">Go to the iPhone App Store</a></li>					
+				</ul>
+				<p><a href="https://itunes.apple.com/us/app/mta-subway-time/id561507659?ls=1&mt=8"><img src="/apps/images/mta_subwaytime_s.jpg"/></a></p -->				
+			</div>
+
+			<div class="plain_box_bottom" style="margin:0 0 12px 0;"></div>
+
+			<div class="more-apps">
+				<dl class="app-thumbnail">
+					<dd><a href="http://apps.mta.info/traintime3/"><img src="images/SubwayTime.png" alt="MTA Subway Time&reg; thumbnail image"></a></dd>
+					<dt><a href="http://apps.mta.info/traintime/">MTA Subway Time&reg;</a></dt>
+				</dl>
+				
+				<dl class="app-thumbnail">
+					<dd><a href="http://itunes.apple.com/us/app/weekender/id528916102?ls=1&mt=8"><img src="images/weekender_s.jpg" alt="MTA Weekender App thumbnail image"></a></dd>
+					<dt><a href="/apps/weekenderApp.html">The Weekender</a></dt>
+				</dl>
+				
+				<dl class="app-thumbnail">
+					<dd><a href="http://web.mta.info/nyct/service/BusTimeAppJune2015.htm"><img src="images/bustime.png" alt="MTA Bus Time&reg; thumbnail image"></a></dd>
+					<dt><a href="http://web.mta.info/nyct/service/BusTimeAppJune2015.htm">MTA Bus Time&reg;</a></dt>
+				</dl>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Content -->
+<div id="Google-skyscraper-ad" class="push-2 span-16 last roundCorners">
+			<script type="text/javascript">
+		<!--
+		google_ad_client = "pub-0982027042052701";
+		/* 160x600, created 5/6/11 */
+		google_ad_slot = "8916589146";
+		google_ad_width = 160;
+		google_ad_height = 600;
+		//-->
+		</script>
+		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script></div>
+
+</div> <!-- close contentbox -->
+
+<!-- JavaScript Includes -->
+<script type="text/javascript" src="/js/csshorizontalmenu.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#printfriendly").click(function() {
+		var s = document.location.search;
+		if (!s)
+			window.open(document.location.pathname + '?print=1', '', 'scrollbars=1');
+		else
+			window.open(document.location.pathname + s + '&print=1', '', 'scrollbars=1');
+		return false;
+	});
+});
+</script>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function() {
+var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+sz.src = '//siteimproveanalytics.com/js/siteanalyze_44028.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+})();
+/*]]>*/
+</script> 
+
+<div class="container clear">
+	<div class="span-15" style="text-align: left;margin-right: 12px;">
+		<div id="translate">
+			<div id="google_translate_element">
+				<div id="temp_GT" class="span-15">
+					<ul style="margin: 0;">
+						<li class="list_f last_list_f first_list_f"><span style="color: #0055AA; font-weight: bold; margin-right: 5px;">Google Translate</span><img style="vertical-align: baseline;" src="/siteimages/google_logo.png" alt="" /></li>
+					</ul>
+				</div>
+			</div><!-- close google_translate_element -->
+		</div><!-- close translate -->
+	</div><!-- close span-14 last -->
+</div> <!-- Close of Container -->
+
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+	pageLanguage: 'en',
+	layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+
+$("#temp_GT").click(function() {
+	var fileref = document.createElement('script');
+		fileref.setAttribute("type", "text/javascript");
+		fileref.setAttribute("src", "http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+	$("#temp_GT").hide();
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51590636-1', 'mta.info');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 970467739;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/970467739/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+</div> <!-- close mainbox -->
+</div>
+</body>
+</html>
