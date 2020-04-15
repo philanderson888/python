@@ -2,6 +2,9 @@
 
 A playground for learning python
 
+### Learning Resources
+
+https://automatetheboringstuff.com/ 
 
 ### Printing To The Screen
 
