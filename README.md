@@ -2,9 +2,27 @@
 
 A playground for learning python
 
-### Learning Resources
+## Contents
+
+- [python](#python)
+  - [Contents](#contents)
+  - [Introduction](#introduction)
+  - [Learning Resources](#learning-resources)
+  - [Simple Commands](#simple-commands)
+    - [Printing To The Screen](#printing-to-the-screen)
+    - [Web Scraping](#web-scraping)
+
+## Introduction
+
+Python is now above Java as world's second most-loved programming language
+
+Python for Everybody - Full Course with Dr. Chuck (Charles Severance)
+
+## Learning Resources
 
 https://automatetheboringstuff.com/ 
+
+## Simple Commands
 
 ### Printing To The Screen
 
