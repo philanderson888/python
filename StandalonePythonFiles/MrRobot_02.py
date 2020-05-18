@@ -23,7 +23,7 @@ if len(sys.argv) > 2:
 		try:
 			open(pass_dict)
 		except:
-			print "[-] Invalid Filename '%s'"%pass_dict
+			print ("[-] Invalid Filename " + s + "%pass_dict")
 			pass_dict = False
 else:
 	pass_dict = False
@@ -39,28 +39,28 @@ logo = """      _                     _
        |_| 
 """
 for _ in logo.split("\n"):
-	print _
+	print ("_")
 	time.sleep(0.1)
 FAIL = False
 
 def elphelp():
-	print "\nELPSCRK\nMr.Robot Brute Force Program\n"
-	print "Commands:\n"
-	print " -list\tAdd keywords to dictionary"
-	print " -ip\tSelect host target"
-	print " -usr\tAdd target username"
-	print " -psw\tSelect password file"
-	print " exit\tClose Elpscrk"
-	print "System Arguments:"
-	print " -f\t Use dictionary rather then password gerneration\n"
-	print " -v\t Verbose mode"
-	print "\nUsage:\n"
-	print "  elpscrk -list pswList.list-add mr; robot; usa; network\n"
-	print "  elpscrk -ip 222.12.154.102 -usr mich05654 -psw pswList"
-	print "\nLegal Example:\n"
-	print "  elpscrk -list pswList.list-add admin;testfire;'1=1\n"
-	print "  elpscrk -ip 65.61.137.117 -usr admin -psw pswList\n"
-	print "  -f <dictionary file path>\n"
+	print ("\nELPSCRK\nMr.Robot Brute Force Program\n")
+	print ("Commands:\n")
+	print (" -list\tAdd keywords to dictionary")
+	print (" -ip\tSelect host target")
+	print (" -usr\tAdd target username")
+	print (" -psw\tSelect password file")
+	print (" exit\tClose Elpscrk")
+	print ("System Arguments:")
+	print (" -f\t Use dictionary rather then password gerneration\n")
+	print (" -v\t Verbose mode")
+	print ("\nUsage:\n")
+	print ("  elpscrk -list pswList.list-add mr; robot; usa; network\n")
+	print ("  elpscrk -ip 222.12.154.102 -usr mich05654 -psw pswList")
+	print ("\nLegal Example:\n")
+	print ("  elpscrk -list pswList.list-add admin;testfire;'1=1\n")
+	print ("  elpscrk -ip 65.61.137.117 -usr admin -psw pswList\n")
+	print ("  -f <dictionary file path>\n")
 
 def terminal(text=False,inp=False):
 	console.set_color(0.0,0.3,0.8)
@@ -72,7 +72,7 @@ def terminal(text=False,inp=False):
 		if inp:
 			return raw_input(text)
 		else:
-			print text
+			print (text)
 
 def query_vector(ip):
 	http,https,httpalt,ssh = False,False,False,False
