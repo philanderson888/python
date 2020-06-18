@@ -21,6 +21,6 @@ Python for Everybody - Full Course with Dr. Chuck (Charles Severance)
 
 https://automatetheboringstuff.com/ 
 
-## [Learn Python](StandalonePythonFiles)
+## [Learn Python](StandalonePythonFiles/README.md)
 
 ## [Python Projects](Projects)
