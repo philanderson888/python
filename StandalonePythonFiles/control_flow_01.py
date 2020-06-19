@@ -16,10 +16,13 @@ for i in range (5,10):
 print('\n\niterate in steps')
 for i in range (0,20,5):
     print(i)
-print('\n\nbreak out of a loop')
-counter=0
+print('\n\nbreak out of a loop and also continue when value is 3')
+counter=-1
 while True:
-    print (counter)
     counter+=1
-    if(counter>5):
+    if(counter==3):
+        print ('not printing this number')
+        continue
+    print (counter)
+    if(counter>10):
         break 

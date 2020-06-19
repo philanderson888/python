@@ -5,6 +5,7 @@
 - [Learn Python](#learn-python)
   - [Contents](#contents)
   - [Introduction](#introduction)
+  - [Python Manual Overview And Summary](#python-manual-overview-and-summary)
   - [Installation](#installation)
   - [Background](#background)
   - [pip Library Manager](#pip-library-manager)
@@ -14,22 +15,30 @@
     - [Comments](#comments)
     - [Printing To The Screen](#printing-to-the-screen)
     - [Ending a program](#ending-a-program)
+    - [sleep.py](#sleeppy)
+  - [Best Practice](#best-practice)
+  - [are we on windows or linux](#are-we-on-windows-or-linux)
+    - [clear screen](#clear-screen)
   - [variables](#variables)
     - [declaring](#declaring)
     - [integers](#integers)
     - [floats](#floats)
     - [Decimal](#decimal)
     - [Fractions](#fractions)
+    - [parse string to integer](#parse-string-to-integer)
+- [parse string to a float](#parse-string-to-a-float)
     - [input](#input)
     - [if statement](#if-statement)
     - [division and modulus operator](#division-and-modulus-operator)
     - [powers](#powers)
     - [tabulating output](#tabulating-output)
+- [formatting numbers to a given number of decimal places](#formatting-numbers-to-a-given-number-of-decimal-places)
     - [Not Escaping \](#not-escaping-)
     - [Strings Are Arrays](#strings-are-arrays)
     - [Strings are immutable](#strings-are-immutable)
     - [String length](#string-length)
   - [Lists](#lists)
+    - [lists as queue](#lists-as-queue)
   - [coding](#coding)
     - [while](#while)
     - [fibonnaci](#fibonnaci)
@@ -37,6 +46,25 @@
     - [range](#range)
     - [pass](#pass)
     - [function](#function)
+      - [function named parameters](#function-named-parameters)
+    - [in](#in)
+    - [lambda](#lambda)
+  - [tuples](#tuples)
+  - [Sets](#sets)
+  - [Dictionaries](#dictionaries)
+- [in and not in](#in-and-not-in)
+- [is and is not](#is-and-is-not)
+  - [modules](#modules)
+  - [python scripts](#python-scripts)
+  - [standard modules](#standard-modules)
+    - [dir() lists modules in an import](#dir-lists-modules-in-an-import)
+    - [dir(builtins) lists built in modules](#dirbuiltins-lists-built-in-modules)
+  - [packages](#packages)
+  - [input and output](#input-and-output)
+    - [str()](#str)
+  - [formatting number](#formatting-number)
+- [where is current working directory](#where-is-current-working-directory)
+  - [reading from files](#reading-from-files)
   - [Get JSON](#get-json)
   - [Web Scraping](#web-scraping)
 
@@ -47,6 +75,25 @@ This is a learning repository for learning python.
 In this repository are single, standalone files which each intoduce a small piece of learning about python.
 
 Happy learning!
+
+## Python Manual Overview And Summary
+
+```
+pip library manager
+pip install
+x=1
+no semicolons
+tab 4 spaces for indent
+no braces
+for loop etc finish with a colon
+a,b,c=1,2,3
+if():
+while():
+for()
+number is integer, float, decimal or fraction
+
+```
+
 
 ## Installation
 
@@ -108,6 +155,65 @@ Control-D on Linux
 Control-Z on Windows
 quit()
 
+
+### sleep.py
+
+```py
+from time import sleep 
+print ('starting')
+sleep(2) 
+print ('ending')
+```
+
+
+
+## Best Practice
+
+```py
+Use `PEP8`
+Use 4 spaces
+Dont use tabs
+Wrap lines 
+Use docstrings which give a description of functions
+use spaces around operators x = 1
+use space after comma a, b, c
+MyClassNamedLikeThis
+my_method_named_like_this
+my_function_named_like_this
+self is the name of the first function argument
+use utf8 
+```
+
+## are we on windows or linux
+
+```py
+# import only system from os 
+from os import system, name 
+
+# for windows 
+if name == 'nt': 
+    print ('we are on Windows')
+
+# for mac and linux(here, os.name is 'posix') 
+else: 
+    print ('we are on Linux')
+```
+
+### clear screen
+
+```py
+import os
+# for windows 
+if os.name == 'nt': 
+    os.system('cls')  # For Windows
+    print ('we are on Windows')
+# for mac and linux(here, os.name is 'posix') 
+else: 
+    os.system('clear')  # For Linux/OS X    
+    print ('we are on Linux')   
+```
+
+
 ## [variables](variables.py)
 
 ### declaring
@@ -162,6 +268,17 @@ from fractions import Fraction
 print (f'What is -16/10 in simplest form? {Fraction(16,-10)}')
 ```
 
+### parse string to integer
+
+```py
+number = int('500')
+```
+
+# parse string to a float
+
+```py
+number = float('500.223')
+```
 
 ### input
 
@@ -228,6 +345,20 @@ print ('|\t40\t|\t50\t|\t60')
 print ('|\t70\t|\t80\t|\t90')
 ```
 
+# formatting numbers to a given number of decimal places
+
+```py
+print ('\n\nprinting a number to a given format')
+longNumber = 1.23456
+print (f'1.23456 is {longNumber:.3f} to 3 decimal places')
+```
+
+
+
+
+
+
+
 ### Not Escaping \
 
 ```py
@@ -280,10 +411,46 @@ print(list02)
 # append
 list02.append(100)
 print(list02)
+# extend which is similar to concatenate
+# insert 2000 at index i
+list02.insert(i,2000)
+# remove item which matches value
+list02.remove(2000)
+# remove item at given index
+list02.del(0)
+# remove last item
+list02.pop()
+# clear
+list02.clear()
+# count
+list02.count()
+# sort
+list02.sort()
+# reverse
+list02.reverse()
+# copy
+list02.copoy
 # nested lists
 list03=[list01,list02]
 print(list03)
 ```
+
+*Note that to use a list as a stack, use append() and pop() methods where in list [1,2,3] item 3 is on the `top` so to speak of a stack*
+
+
+### lists as queue
+
+```py
+from collections import deque
+myqueue = deque(["a","b","c"])
+myqueue.append("d")
+myqueue.append("e")
+# remove first item ie 'a'
+myqueue.popleft()
+# myqueue holds b,c,d,e
+```
+
+
 
 ## coding
 
@@ -296,13 +463,18 @@ while a<10:
     print(a)
     a,b = b, a+b
 
-print('\n\nbreak out of a loop')
-counter=0
+print('\n\nbreak out of a loop and also continue when value is 3')
+counter=-1
 while True:
-    print (counter)
     counter+=1
-    if(counter>5):
+    if(counter==3):
+        print ('not printing this number')
+        continue
+    print (counter)
+    if(counter>10):
         break 
+
+
 ```
 
 ### [fibonnaci](fibonnaci.py)
@@ -326,10 +498,6 @@ for item in myArray:
 ### range
 
 ```py
-print ('\n\nfor loop')
-myArray = [10,20,30]
-for item in myArray:
-    print(item)
 print('\n\niterate over a sequence of numbers')
 for i in range(10):
     print(i)
@@ -369,6 +537,17 @@ doThat()
 doThat(2)
 ```
 
+#### function named parameters
+
+```py
+print('\n\nCalling Named Parameters')
+def doThis(a,b=1,c=2,d=3):
+    print(f'a,b,c,d is {a,b,c,d}')
+doThis(a=1) 
+```
+
+
+
 ### in
 
 ```py
@@ -379,6 +558,215 @@ if myString in longString:
 else    
     print('false')
 ```
+
+
+### lambda
+
+lambda functions are just synctatic sugar for regular functions
+
+```py
+# declare a function using the lambda syntax
+print('\n\nsimple lambda with one input')
+doThis = lambda input : input + 10
+print(doThis(15))
+
+print('\n\nsimple lambda with two inputs')
+doThat = lambda a,b : a*b 
+print(doThat(10,20))
+
+# lambda in a function
+print('\n\nuse a multiplier with a lambda')
+def alsoDoThis(fixedMultiplier):
+    return lambda b,c : fixedMultiplier*b*c 
+functionMultiply=alsoDoThis(3)
+print(functionMultiply(10,2))
+```
+
+
+
+## tuples
+
+Tuples are immutable
+
+```py
+print ('\n\nTuples')
+tuple01 = 10, True , 'a string'
+print(tuple01)
+print(tuple01[0])
+print(tuple01[1])
+print(tuple01[2])
+```
+
+
+## Sets
+
+Sets are `unordered` collections with `uniquely indexed items`
+
+```py
+# sets
+print ('\n\nSets')
+set01 = { 'a', 'b', 'c'}
+print (set01)
+print (f"is 'a' in set01? {'a' in set01}")
+```
+
+
+## Dictionaries
+
+Dictionaries are indexed by a `key` which is `unique`
+
+```py
+# dictionaries
+print ('\n\nDictionaries')
+dictionary01 = { 1: 'one', 2: 'two', 3: 'three' }
+dictionary01[4] = 'four'
+print (dictionary01)
+# remove item
+del dictionary01[2]
+print (f'after removing index 2 the dictionary shows {dictionary01}')
+# list the indexes
+print (f'listing the indexes with {list(dictionary01)}')
+# is item in dictionary
+print (f'is item 3 in the dictionary? {3 in dictionary01}')
+# with a constructor
+dictionary02 = dict ( [ (1,'one'), (2, 'two'), (3, 'three')  ])
+print (dictionary02)
+# automatically build a dictionary
+print ('\n\nAutomatically build a dictionary')
+dictionary03 = { x:x**2 for x in (1,2,3,4,5) }
+print (dictionary03)
+# iterate
+print ('\n\nIterate over a dictionary')
+for key,value in dictionary01.items():
+    print (key,value)
+print ('\n\nIterate over a dictionary using the index')
+for index,value in enumerate(dictionary01):
+    print (index,value)
+```
+
+
+
+# in and not in
+
+Is an item present?
+
+# is and is not
+
+are two objects equal?
+
+
+## modules
+
+create a file and save it `module_name.py`
+
+in the python program import the module with
+
+```py
+import module_name
+```
+
+## python scripts
+
+to run python code as a script don't put the code in a function
+
+
+
+```py
+# script.py
+print ('this is a script')
+```
+
+```py
+import script
+```
+
+
+## standard modules
+
+Python has built into it 'standard' modules which are described in the `Python Library Reference`.
+
+### dir() lists modules in an import
+
+```py
+import thisModule
+dir(thisModule)
+```
+
+### dir(builtins) lists built in modules
+
+```py
+import builtins
+dir(builtins)
+```
+
+
+## packages
+
+
+
+## input and output
+
+```py
+variable = 'variable
+print (f'some text with a {variable} here)1
+```
+
+### str() 
+
+str() generates a string from the input
+
+## formatting number
+
+to print to 3 decimal places
+
+```py
+longNumber = 1.23456
+print (f'number is {longNumber:.3f})
+```
+
+# where is current working directory
+
+```py
+import os
+print (os.getcwd())
+```
+
+## reading from files
+
+w = overwrite
+
+r = read
+
+a = append
+
+r+ = read and write
+
+```py
+# can use this
+myFile = open('thisFile','w')
+# recommend to use this to auto close file
+# where is current working directory
+import os
+print (os.getcwd())
+with open('StandalonePythonFiles/data.txt') as data_file:
+    data = data_file.read()
+    print (data)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Get JSON
 
