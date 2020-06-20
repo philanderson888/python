@@ -5,6 +5,7 @@
 - [Learn Python](#learn-python)
   - [Contents](#contents)
   - [Introduction](#introduction)
+  - [Reference](#reference)
   - [Python Manual Overview And Summary](#python-manual-overview-and-summary)
   - [Installation](#installation)
   - [Background](#background)
@@ -33,6 +34,7 @@
     - [powers](#powers)
     - [tabulating output](#tabulating-output)
 - [formatting numbers to a given number of decimal places](#formatting-numbers-to-a-given-number-of-decimal-places)
+- [printing columns](#printing-columns)
     - [Not Escaping \](#not-escaping-)
     - [Strings Are Arrays](#strings-are-arrays)
     - [Strings are immutable](#strings-are-immutable)
@@ -65,6 +67,7 @@
   - [formatting number](#formatting-number)
 - [where is current working directory](#where-is-current-working-directory)
   - [reading from files](#reading-from-files)
+  - [JSON](#json)
   - [Get JSON](#get-json)
   - [Web Scraping](#web-scraping)
 
@@ -75,6 +78,16 @@ This is a learning repository for learning python.
 In this repository are single, standalone files which each intoduce a small piece of learning about python.
 
 Happy learning!
+
+## Reference
+
+All you need to ever know about python in one page
+
+https://docs.python.org/3/contents.html
+
+Tutorial
+
+https://docs.python.org/3/tutorial/index.html
 
 ## Python Manual Overview And Summary
 
@@ -354,8 +367,14 @@ print (f'1.23456 is {longNumber:.3f} to 3 decimal places')
 ```
 
 
+# printing columns
 
-
+```py
+print ('\n\nprinting fixed columns')
+print (f'{10:10}{20:10}{30:10}')
+print (f'{40:10}{50:10}{60:10}')
+print (f'{70:10}{80:10}{90:10}')
+```
 
 
 
@@ -742,30 +761,72 @@ a = append
 r+ = read and write
 
 ```py
-# can use this
-myFile = open('thisFile','w')
-# recommend to use this to auto close file
-# where is current working directory
+# where is current working directory?
 import os
 print (os.getcwd())
-with open('StandalonePythonFiles/data.txt') as data_file:
+
+# print file
+with open('data.txt') as data_file:
+    print ('\n\nRead the complete file')
     data = data_file.read()
     print (data)
+
+# print part of file
+with open('data.txt') as data_file:
+    print ('\n\nRead only 10 characters')
+    smalldata = data_file.read(10)
+    print (smalldata)
+
+# loop over lines in a file
+print ('\n\nRead line by line in a loop until done')
+with open ('data.txt') as data:
+    counter=0
+    for line in data:
+        counter += 1
+        print (counter,line, end='')
+
+# loop over lines in a file with formatting
+print ('\n\nRead line by line in a loop until done')
+with open ('data.txt') as data:
+    counter=0
+    for line in data:
+        counter += 1
+        # not printing a blank line
+        # must include slice and not include the final character
+        # which is a newline character
+        print (f'{counter:>10}{line[:-1]:>30}')
+# write
+print('\n\nWriting to a file')
+with open ('data.txt', 'a') as data:
+    data.write('\nadding some data')
+with open ('data.txt') as data:
+    print (data.read())
+# read and append
+print ('\n\nOpen file for read and append')
+with open ('data.txt', 'a+') as data:
+    data.write('\nappend to end')
 ```
 
 
 
+## JSON
 
-
-
-
-
-
-
-
-
-
-
+```py
+# dump data
+import json
+print (json.dumps([1,'string','hello', True,'there']))
+# serialise a list to a file
+list01 = [10,20,30]
+with open('data.json','w') as data:
+    json.dump(list01,data)
+# read back the file
+with open ('data.json') as data: 
+    print (data.read())
+# this time read back the file into a list again
+with open ('data.json') as data:
+    list01 = json.load(data)
+    print (list01)
+```
 
 
 ## Get JSON
@@ -776,6 +837,21 @@ r = requests.get('https://raw.githubusercontent.com/philanderson888/data/master/
 jsonOutput = r.json()
 print (jsonOutput)
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Web Scraping
