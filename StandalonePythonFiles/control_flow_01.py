@@ -26,3 +26,18 @@ while True:
     print (counter)
     if(counter>10):
         break 
+
+# iterating
+print('\n\niterating')
+long_string = 'abcdef'
+my_iterator = iter(long_string)
+print(my_iterator)
+print(next(my_iterator))
+print(next(my_iterator))
+print(next(my_iterator))
+print(next(my_iterator))
+print(next(my_iterator))
+print(next(my_iterator))
+print(next(my_iterator))
+print(next(my_iterator))
+print(next(my_iterator))

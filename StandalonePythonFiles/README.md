@@ -46,6 +46,9 @@
     - [fibonnaci](#fibonnaci)
     - [for](#for)
     - [range](#range)
+    - [break out of loop](#break-out-of-loop)
+    - [for loop variants](#for-loop-variants)
+  - [iterating is another way to loop over objects](#iterating-is-another-way-to-loop-over-objects)
     - [pass](#pass)
     - [function](#function)
       - [function named parameters](#function-named-parameters)
@@ -61,6 +64,7 @@
   - [standard modules](#standard-modules)
     - [dir() lists modules in an import](#dir-lists-modules-in-an-import)
     - [dir(builtins) lists built in modules](#dirbuiltins-lists-built-in-modules)
+    - [__main__ and main()](#main-and-main)
   - [packages](#packages)
   - [input and output](#input-and-output)
     - [str()](#str)
@@ -69,6 +73,14 @@
   - [reading from files](#reading-from-files)
   - [JSON](#json)
   - [Get JSON](#get-json)
+  - [Exceptions](#exceptions)
+  - [OOP](#oop)
+  - [Class](#class)
+  - [extending a method](#extending-a-method)
+    - [built in methods](#built-in-methods)
+    - [multiple inheritance](#multiple-inheritance)
+  - [private instance variables](#private-instance-variables)
+  - [adding instance members](#adding-instance-members)
   - [Web Scraping](#web-scraping)
 
 ## Introduction
@@ -191,6 +203,7 @@ Use docstrings which give a description of functions
 use spaces around operators x = 1
 use space after comma a, b, c
 MyClassNamedLikeThis
+my_variable_named_like_this
 my_method_named_like_this
 my_function_named_like_this
 self is the name of the first function argument
@@ -528,6 +541,56 @@ for i in range (0,20,5):
     print(i)
 ```
 
+### break out of loop
+
+```py
+print('\n\nbreak out of a loop and also continue when value is 3')
+counter=-1
+while True:
+    counter+=1
+    if(counter==3):
+        print ('not printing this number')
+        continue
+    print (counter)
+    if(counter>10):
+        break 
+```
+
+
+### for loop variants
+
+```py
+for item in [1,2,3]:
+
+for item in (1,2,3):
+
+for key in { 1:'one',2:'two'}:
+
+for char in "abc":
+
+for line in open("myfile.txt"):
+```
+
+
+## iterating is another way to loop over objects
+
+```py
+print('\n\niterating')
+long_string = 'abcdef'
+my_iterator = iter(long_string)
+print(my_iterator)
+print(next(my_iterator))
+print(next(my_iterator))
+print(next(my_iterator))
+print(next(my_iterator))
+```
+
+
+
+
+
+
+
 
 ### pass
 
@@ -718,6 +781,10 @@ import builtins
 dir(builtins)
 ```
 
+### __main__ and main()
+
+The main() method can be defined so when a module is imported all of the code does not run, only the main() method runs
+
 
 ## packages
 
@@ -842,8 +909,171 @@ print (jsonOutput)
 
 
 
+## Exceptions
+
+Try..Except..Else..Finally
+
+```py
+print ('\n\nExceptions')
+print ('\n\nThrow exception if number is invalid')
+while True:
+    try:
+        # x = int(input("please enter a number:  "))
+        x = 45
+        print ('thank you')
+        break 
+    except ValueError:
+        print ("invalid number - try again")
+    except RuntimeError, TypeError, NameError, OSError
+        pass
+print ('\n\nCustom Exception')
+try:
+    raise Exception('print this','and this')
+except Exception as customException:
+    print(type(customException))
+    print(customException.args)
+    print(customException)
+    x,y = customException.args
+    print (f'{x:10}{y:10}')
+print ('\n\nRaising a particular exception')
+try: 
+    raise NameError('this is a name error exception')
+except NameError:
+    print ('name error')
+print ('\n\nalso')
+try:
+    raise ValueError 
+except ValueError:
+    print ('value error exception')
+# try..except..else
+print('\n\ntry..except..else')
+try:
+    pass
+except:
+    print('an exception happened')
+else:
+    print('no exception took place')
+# try..except..finally
+print ('\n\ntry..except..finally')
+try:
+    raise KeyboardInterrupt
+except KeyboardInterrupt:
+    print('keyboard interrupt')
+finally:
+    print('finally')
+```
 
 
+## OOP
+
+Multiple base classes allowed
+
+Derived class can override any method
+
+Method can call the base class method of the same name
+
+By default all classes are public
+
+By default all methods are virtual and can be overridden
+
+Namespaces separate code
+
+    Python built-in namespace surrounds all code
+
+    Scope is the region of code inside a namspace
+
+        Four scopes exist
+
+            - inner scope
+            - enclosing functions
+            - current module's global names
+            - namespace built-in names
+
+Attributes are written object.attribute and may be read only or writable
+
+
+## Class
+
+```py
+# classes
+print('\n\nSimple Class')
+class MyClass:
+    # static variable
+    variable=22
+    # instance variable
+    def __init__(self,name):
+        self.name=name 
+    def doThis(self):
+        return ('doing something')
+instance01 = MyClass('myname')
+# static class variable
+print(MyClass.variable)
+# static class variable in all instances
+print(instance01.variable)
+# instance method
+print(instance01.doThis())
+# instance variable
+print(instance01.name)
+
+# list in class
+print('classess with lists in the instance')
+class MyClass:
+    def __init__(self,name):
+        self.name=name 
+        self.my_array=[]
+    def add_to_array(self,item):
+        self.my_array.append(item)
+instance02 = MyClass('bob') 
+instance02.add_to_array('item 1')
+instance02.add_to_array('item 2')
+instance02.add_to_array('item 3')
+print(instance02.my_array)
+
+# inheritance
+print('\n\nclass inheritance')
+class Parent:
+    def __init__(self,name):
+        print('parent has a name which is inherited in child')
+        self.name=name 
+class Child(Parent):
+    pass 
+instance03=Child('bill')
+print (f'child name is {instance03.name}')
+```
+
+## extending a method
+
+all methods can be overridden
+
+methods can be extended also
+
+just call `Parent.method(self,arguments)
+
+### built in methods
+
+isinstance()
+
+issubclass()
+
+### multiple inheritance
+
+class Child(Parent1,Parent2)
+
+## private instance variables
+
+private instance variables don't exist in python
+
+convention uses _private_variable with an `underscore` at the start
+
+
+## adding instance members
+
+```py
+class MyClass:
+    pass
+instance = MyClass()
+instance.field01='some data'
+```
 
 
 
