@@ -8,8 +8,9 @@ A playground for learning python
   - [Contents](#contents)
   - [Introduction](#introduction)
   - [Learning Resources](#learning-resources)
-  - [Learn Python](#learn-python)
+  - [Standalone Python Files](#standalone-python-files)
   - [Python Projects](#python-projects)
+  - [whatsapp](#whatsapp)
 
 ## Introduction
 
@@ -21,6 +22,10 @@ Python for Everybody - Full Course with Dr. Chuck (Charles Severance)
 
 https://automatetheboringstuff.com/ 
 
-## [Learn Python](StandalonePythonFiles/README.md)
+## [Standalone Python Files](StandalonePythonFiles/README.md)
 
 ## [Python Projects](Projects)
+
+## whatsapp
+
+send messages automatically [whatsapp](notes/whatsapp.md)
